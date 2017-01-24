@@ -1,0 +1,9 @@
+# ShiuLabUtilityScripts
+A repository for sharing and collaborative editing of common utility scripts used by the ShiuLab
+For more information, see the help text for each script
+
+Currently, this respository contains:
+    -qsub_hpcc.py 
+
+
+More scripts will be added in the future
