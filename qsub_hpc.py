@@ -319,7 +319,7 @@ class qsub_hpc:
 		print "        will not run."
 		print "    e - email, default '', if an email is passed, PBS -m will be"
 		print "        set to a."
-		print "    s - sec between qstat check, default 10"
+		print "    s - sec between qstat check, default 60. Note: Repeated calls of qstat can tax system resources. DO NOT lower the time between checks unless there is enough space on your queue to accept all jobs being submitted."
 		print "    n - number of jobs to submit at a time , default 10"
 		print "    u - which user to monitor"
 		print "    r - jobnum1-jobnum2, jobnum-, or all (default)"
@@ -329,7 +329,7 @@ class qsub_hpc:
 		print "    mo- a file or a string with a list of modules to load, if a str,"
 		print "        use ',' as delimiter"
 		print "    J - job name"
-		print "    p - number of cpu, default 1"
+		print "    p - number of cpu, default 1. Note: Each user can use a MAXIMUM of 512 cores at a time across all jobs."
 		print "    pre - a file with additional commands common among all jobs to"
 		print "        appended BEFORE the variable command line"
 		print "    post- a file with additional commands common among all jobs to"
@@ -343,7 +343,8 @@ if __name__ == '__main__':
 
 	qsub = qsub_hpc()
 	f = c = u = e = wd = k = mo = pre = post = ""
-	s = n = w = 10
+	n = w = 10
+        s = 60
 	m = p = o = 1
 	r = "*"
 	J = "job"
